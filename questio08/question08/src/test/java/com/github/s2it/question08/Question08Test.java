@@ -21,7 +21,7 @@ public class Question08Test {
 	@Test
 	public void bothNumberEmptyTest() {
 		String numberC = this.question08.build("", "");
-		Assert.assertEquals(numberC, "");
+		Assert.assertEquals("", numberC);
 	}
 
 	@Test
@@ -39,13 +39,13 @@ public class Question08Test {
 	@Test
 	public void numberComplete() {
 		String numberC = this.question08.build(a, b);
-		Assert.assertEquals(numberC, "5193");
+		Assert.assertEquals("5193", numberC);
 	}
 
 	@Test
 	public void greatThan1000000() {
 		String numberC = this.question08.build("10256", "512");
-		Assert.assertEquals(numberC, "-1");
+		Assert.assertEquals("-1", numberC);
 	}
 
 }

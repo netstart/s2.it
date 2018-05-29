@@ -1,18 +1,33 @@
 package com.github.s2it.question09;
 
 public class Question09 {
-	int valor;
+	private int valor;
 
-	Question09 left;
-	Question09 right;
+	private Question09 pair;
+	private Question09 odd;
 
 	public Question09(int valor) {
 		this.valor = valor;
 	}
 
-	public Question09 add(Question09 node) {
+	public void add(Question09 node) {
+		if (node.valor % 2 == 0) {
+			this.pair = node;
+		} else {
+			this.odd = node;
+		}
+	}
 
-		return this;
+	public int sum() {
+		return sum(this);
+	}
+
+	public static int sum(Question09 node) {
+		if (node == null) {
+			return 0;
+		}
+
+		return sum(node.pair) + sum(node.odd) + node.valor;
 	}
 
 }
