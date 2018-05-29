@@ -19,6 +19,12 @@ public class Question08Test {
 	}
 
 	@Test
+	public void bothNumberNullTest() {
+		String numberC = this.question08.build(null, null);
+		Assert.assertEquals("", numberC);
+	}
+
+	@Test
 	public void bothNumberEmptyTest() {
 		String numberC = this.question08.build("", "");
 		Assert.assertEquals("", numberC);
